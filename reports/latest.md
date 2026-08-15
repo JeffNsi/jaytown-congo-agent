@@ -1,6 +1,6 @@
 # JayTown Congo Intelligence Brief
 
-_Generated (UTC): 2026-08-15_0835_
+_Generated (UTC): 2026-08-15_0930_
 
 ## Market Snapshot
 
@@ -16,7 +16,7 @@ _Generated (UTC): 2026-08-15_0835_
 
 ## News & Sentiment
 
-- Sentiment unavailable: HF inference failed: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+- Sentiment unavailable: HF inference failed: 401 Client Error: Unauthorized for url: https://router.huggingface.co/hf-inference/models/ProsusAI/finbert
 
 ## Signal of the Day
 
