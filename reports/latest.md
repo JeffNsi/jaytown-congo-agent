@@ -1,22 +1,22 @@
 # JayTown Congo Intelligence Brief
 
-_Generated (UTC): 2026-08-19_1637_
+_Generated (UTC): 2026-08-19_1731_
 
 ## Market Snapshot
 
 | Ticker | Price | Day % |
 |---|---|---|
-| IVN.TO | 11.59 CAD | 3.48 |
-| FM.TO | 44.46 CAD | 2.32 |
-| GLNCY | 15.72 USD | 6.0 |
-| COPX | 88.33 USD | 3.61 |
-| XME | 118.1625 USD | 4.18 |
-| HG=F | 6.5055 USD | 0.62 |
-| CDF=X | 2263.3601 CDF | 0.05 |
+| IVN.TO | 11.535 CAD | 2.99 |
+| FM.TO | 44.34 CAD | 2.05 |
+| GLNCY | 15.68 USD | 5.73 |
+| COPX | 88.07 USD | 3.31 |
+| XME | 117.63 USD | 3.71 |
+| HG=F | 6.4925 USD | 0.42 |
+| CDF=X | 2253.0 CDF | -0.41 |
 
 ## News & Sentiment
 
-- Sentiment unavailable: HF inference failed: 401 Client Error: Unauthorized for url: https://router.huggingface.co/hf-inference/models/ProsusAI/finbert
+- Sentiment unavailable: no headlines to analyze
 
 ## Signal of the Day
 
