@@ -50,7 +50,13 @@ def run_agent() -> str:
 
     # Explicit model_id: smolagents' default (Qwen3-Next-80B-A3B-Thinking) is not
     # enabled on the free HF Inference router for most accounts. Llama-3.1-8B is.
-    model = InferenceClientModel(model_id="meta-llama/Llama-3.1-8B-Instruct")
+    # Explicit provider: without it, newer huggingface_hub versions default to
+    # "auto" routing, which raises "Cannot select auto-router when using
+    # non-Hugging Face API key" unless the token strictly starts with "hf_".
+    # Pinning "hf-inference" uses the same free endpoint the rest of this
+    # codebase calls directly, and sidesteps that check entirely.
+    model = InferenceClientModel(model_id="meta-llama/Llama-3.1-8B-Instruct",
+                                  provider="hf-inference")
     agent = CodeAgent(
         tools=[get_market_data, get_congo_news, analyze_sentiment, save_report],
         model=model,
