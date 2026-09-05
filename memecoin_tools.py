@@ -413,5 +413,6 @@ def send_telegram_alert(digest_text: str) -> str:
         except Exception as e:
             results.append({"ok": False, "error": str(e)[:150]})
 
-    return json.dumps({"sent": True, "chunks": len(chunks), "results": results},
+        all_ok = all(r.get("ok") for r in results)
+      return json.dumps({"sent": all_ok, "chunks": len(chunks), "results": results},
                        ensure_ascii=False)
