@@ -154,7 +154,13 @@ def run_agent(token_addresses=None) -> str:
     """Full agentic run: the LLM applies the framework and writes the analysis."""
     from smolagents import CodeAgent, InferenceClientModel
 
-    model = InferenceClientModel(model_id="meta-llama/Llama-3.1-8B-Instruct")
+    # Explicit provider: without it, newer huggingface_hub versions default to
+    # "auto" routing, which raises "Cannot select auto-router when using
+    # non-Hugging Face API key" unless the token strictly starts with "hf_".
+    # Pinning "hf-inference" uses the same free endpoint the rest of this
+    # codebase calls directly, and sidesteps that check entirely.
+    model = InferenceClientModel(model_id="meta-llama/Llama-3.1-8B-Instruct",
+                                  provider="hf-inference")
     agent = CodeAgent(
         tools=[
             discover_candidate_tokens, search_pairs, get_token_pairs,
