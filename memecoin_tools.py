@@ -14,6 +14,9 @@ Data sources:
                                distribution and whale/deployer analysis are
                                explicitly reported as unavailable rather than
                                guessed at.
+- Telegram Bot API (optional) -> pushes a condensed digest to a chat/channel,
+                               ONLY if TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID
+                               are set. Free, no third-party cost.
 
 IMPORTANT: DexScreener's "latest boosted" and "latest profiles" endpoints are
 PAID promotion surfaces (projects pay to appear there). They are useful as a
@@ -30,8 +33,11 @@ from smolagents import tool
 
 HF_TOKEN = os.environ.get("HF_TOKEN", "")
 BIRDEYE_API_KEY = os.environ.get("BIRDEYE_API_KEY", "")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
 
 DEXSCREENER_BASE = "https://api.dexscreener.com"
+TELEGRAM_MAX_CHARS = 4000  # Telegram's hard limit is 4096; leave headroom
 
 
 @tool
@@ -356,3 +362,49 @@ def save_report(markdown_report: str) -> str:
     with open("reports/latest_memecoin.md", "w", encoding="utf-8") as f:
         f.write(header + markdown_report)
     return path
+
+
+@tool
+def send_telegram_alert(digest_text: str) -> str:
+    """Sends a condensed plain-text digest to a Telegram chat or channel via
+    the Telegram Bot API. Requires TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID
+    env vars (create a bot with @BotFather, add it to the target chat/channel,
+    and use its chat ID). Plain text only -- do not include Markdown/HTML
+    special characters expecting them to render, since ticker symbols and
+    URLs in memecoin data reliably break Telegram's strict parse modes; this
+    tool sends with no parse_mode for that reason. Messages over ~4000
+    characters are split into multiple sends automatically.
+
+    Args:
+        digest_text: The plain-text summary to send (e.g. top candidates
+            with verdicts and key numbers, plus a link to the full report).
+
+    Returns:
+        JSON string: {"sent": bool, "reason"/"chunks"/"results": ...}.
+    """
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        return json.dumps({
+            "sent": False,
+            "reason": "TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set -- "
+                      "Telegram delivery is disabled, not failing silently.",
+        })
+
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    chunks = [digest_text[i:i + TELEGRAM_MAX_CHARS]
+              for i in range(0, len(digest_text), TELEGRAM_MAX_CHARS)] or [digest_text]
+
+    results = []
+    for chunk in chunks:
+        try:
+            resp = requests.post(url, json={
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": chunk,
+                "disable_web_page_preview": True,
+            }, timeout=20)
+            resp.raise_for_status()
+            results.append({"ok": True})
+        except Exception as e:
+            results.append({"ok": False, "error": str(e)[:150]})
+
+    return json.dumps({"sent": True, "chunks": len(chunks), "results": results},
+                       ensure_ascii=False)
