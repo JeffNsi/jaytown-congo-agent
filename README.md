@@ -55,6 +55,7 @@ It is built to be skeptical by construction: every report separates **FACTS** (d
 | Narrative/chatter | DuckDuckGo (ddgs) | Free, no key |
 | Sentiment | Twitter-RoBERTa via HF Inference API | Free tier |
 | Holder concentration / whale checks | Birdeye API | **Optional** — needs `BIRDEYE_API_KEY`; reported as unavailable without it |
+| Alerts | Telegram Bot API | **Optional** — needs `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID`; free, no third-party cost |
 | 24/7 runner | GitHub Actions cron | Free (2000 min/mo) |
 
 ### Run locally
@@ -63,10 +64,20 @@ It is built to be skeptical by construction: every report separates **FACTS** (d
 pip install -r requirements.txt
 export HF_TOKEN=hf_xxx                  # optional, enables LLM reasoning mode
 export BIRDEYE_API_KEY=...              # optional, enables holder-distribution checks
+export TELEGRAM_BOT_TOKEN=...           # optional, enables Telegram digest delivery
+export TELEGRAM_CHAT_ID=...             # optional, required alongside the bot token
 python memecoin_agent.py                             # auto-discovery + full framework
 python memecoin_agent.py --tokens=<addr1>,<addr2>     # analyze specific token addresses
 python memecoin_agent.py --pipeline                   # deterministic mode, no LLM
 ```
+
+### Telegram alerts setup
+
+1. Message **@BotFather** on Telegram → `/newbot` → follow the prompts → copy the bot token it gives you.
+2. Add the bot to the chat/group/channel you want alerts in (for a channel, add it as an admin).
+3. Get the chat ID: send any message in that chat, then visit `https://api.telegram.org/bot<TOKEN>/getUpdates` in a browser and read the `"chat":{"id": ...}` value (for a channel, this is a negative number).
+4. Add both `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` as repo secrets (Settings → Secrets and variables → Actions) so the hourly GitHub Actions run can deliver the digest automatically.
+5. Every run — LLM mode or pipeline mode — sends a condensed plain-text digest (ticker, verdict, and the key numbers behind it, one block per candidate) plus a link to the full report in the repo. If the secrets aren't set, this step is a clean no-op — it's reported in the workflow logs, not a silent failure.
 
 ### Honest limitations
 
