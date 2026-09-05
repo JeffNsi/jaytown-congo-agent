@@ -144,7 +144,11 @@ def get_token_pairs(token_address: str, chain_id: str = "solana") -> str:
 
     Args:
         token_address: The token's contract address.
-        chain_id: Chain the token lives on (default "solana").
+        chain_id: Chain the token lives on (default "solana"). Results are
+            strictly filtered to this chain -- if the token has no pair on
+            it (e.g. it actually lives on a different chain), this returns
+            an empty list rather than silently substituting a pair from
+            another chain under the requested chain's label.
 
     Returns:
         JSON string: list of pair objects with full metrics, plus derived
@@ -161,7 +165,9 @@ def get_token_pairs(token_address: str, chain_id: str = "solana") -> str:
     except Exception as e:
         return json.dumps({"error": f"lookup failed: {str(e)[:150]}"})
 
-    pairs = [p for p in pairs if p.get("chainId") == chain_id] or pairs
+    # Strict chain filter, no fallback: a pair on a different chain must
+    # never be silently analyzed as though it were the requested chain.
+    pairs = [p for p in pairs if p.get("chainId") == chain_id]
     now_ms = dt.datetime.utcnow().timestamp() * 1000
 
     out = []
@@ -178,6 +184,7 @@ def get_token_pairs(token_address: str, chain_id: str = "solana") -> str:
             "dexId": p.get("dexId"),
             "pairAddress": p.get("pairAddress"),
             "baseToken": p.get("baseToken", {}).get("symbol"),
+            "baseTokenName": p.get("baseToken", {}).get("name"),
             "priceUsd": p.get("priceUsd"),
             "liquidityUsd": liquidity,
             "marketCap": mcap,

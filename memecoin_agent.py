@@ -25,7 +25,7 @@ Usage:
     export HF_TOKEN=hf_xxx                 # free token from hf.co/settings/tokens
     export BIRDEYE_API_KEY=...             # optional, enables holder-distribution checks
     python memecoin_agent.py                              # candidate discovery + full framework
-    python memecoin_agent.py --tokens So111...,Es9vM...    # analyze specific token addresses
+    python memecoin_agent.py --tokens=So111...,Es9vM...    # analyze specific token addresses
     python memecoin_agent.py --pipeline                    # deterministic fallback, no LLM
 """
 
@@ -105,9 +105,15 @@ Steps:
    declared socials.
 3. Call get_holder_distribution() for each candidate. If unavailable, note
    that explicitly -- do not skip mentioning it.
-4. Call search_social_chatter() with the token's name/ticker, then pass the
-   results to analyze_sentiment(). Treat this purely as a narrative/momentum
-   proxy, not an engagement metric.
+4. Call search_social_chatter() with a query combining the token's full name,
+   ticker, AND chain (e.g. `"Dogwifhat 2.0" DOGWIF2 solana memecoin`) -- a
+   ticker alone is not a unique identifier, since many memecoins reuse common
+   tickers across chains and over time. Then pass the results to
+   analyze_sentiment(). Treat this purely as a narrative/momentum proxy, not
+   a confirmed-attribution engagement metric: individual results are not
+   verified to be about this specific contract address, so flag results that
+   look like they may be about a different token with the same ticker rather
+   than counting them as evidence for this one.
 5. For EACH candidate token, write a report section with:
    ### <TICKER> (<chain>, <address>)
    **Facts** (bulleted, from tool outputs only, with numbers)
@@ -204,9 +210,12 @@ def run_pipeline(token_addresses=None, chain_id: str = "solana") -> str:
                   + "_", ""]
 
         if not pair:
-            lines += ["**Facts**: no DexScreener pair data returned "
-                       "(token may be too new, illiquid, or the address is wrong).",
-                       "**Verdict**: needs-more-data -- no tradeable pair found.", ""]
+            lines += ["**Facts**: no DexScreener pair data returned for this "
+                       f"address on chain \"{chain}\" (token may be too new, "
+                       "illiquid, on a different chain than requested, or the "
+                       "address is wrong).",
+                       "**Verdict**: needs-more-data -- no tradeable pair found "
+                       f"on {chain}.", ""]
             sections.extend(lines)
             verdicts.append((symbol, "needs-more-data"))
             digest_blocks.append(f"{symbol} ({chain}) -- needs-more-data: no tradeable pair found.")
@@ -261,11 +270,17 @@ def run_pipeline(token_addresses=None, chain_id: str = "solana") -> str:
                        "- Unique-author count / bot-vs-human split on social chatter: unavailable "
                        "(DuckDuckGo results give article mentions, not per-account engagement).", ""]
 
-        chatter = json.loads(search_social_chatter(f"{symbol} memecoin", max_results=8))
+        token_name = pair.get("baseTokenName")
+        chatter_query = f'"{token_name}" {symbol} {chain} memecoin' if token_name else f"{symbol} {chain} memecoin"
+        chatter = json.loads(search_social_chatter(chatter_query, max_results=8))
         chatter_count = len([c for c in chatter if "error" not in c])
         lines += [f"**Narrative proxy**: {chatter_count} recent web/news mention(s) found "
-                   "for the ticker+\"memecoin\" query. This measures indexed mentions, not "
-                   "community size, growth rate, or authenticity.", ""]
+                   f'for the query `{chatter_query}`. This measures indexed mentions, not '
+                   "community size, growth rate, or authenticity -- AND the ticker alone is "
+                   "not a unique identifier (many memecoins reuse common tickers), so even "
+                   "with the token name and chain added to the query, individual results are "
+                   "not verified to be about this specific contract address. Treat this count "
+                   "as an unverified, easily-mismatched proxy, not confirmed attribution.", ""]
 
         answers = []
         answers.append("1. Real-community evidence: " +
