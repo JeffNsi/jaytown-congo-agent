@@ -414,5 +414,5 @@ def send_telegram_alert(digest_text: str) -> str:
             results.append({"ok": False, "error": str(e)[:150]})
 
     all_ok = all(r.get("ok") for r in results)
-      return json.dumps({"sent": all_ok, "chunks": len(chunks), "results": results},
+  return json.dumps({"sent": all_ok, "chunks": len(chunks), "results": results},
                        ensure_ascii=False)
