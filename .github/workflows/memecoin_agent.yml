@@ -1,0 +1,54 @@
+name: Memecoin Research Agent (hourly)
+
+on:
+  schedule:
+    - cron: "30 * * * *"  # every hour, offset from the Congo agent
+  workflow_dispatch:
+    inputs:
+      tokens:
+        description: "Comma-separated token contract addresses to analyze (optional; leave blank for auto-discovery)"
+        required: false
+        default: ""
+
+concurrency:
+  group: memecoin-research-agent
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run agent
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          BIRDEYE_API_KEY: ${{ secrets.BIRDEYE_API_KEY }}
+          TOKENS_INPUT: ${{ github.event.inputs.tokens }}
+        run: |
+          if [ -n "$TOKENS_INPUT" ]; then
+            python memecoin_agent.py "--tokens=$TOKENS_INPUT"
+          else
+            python memecoin_agent.py
+          fi
+
+      - name: Commit report back to repo
+        run: |
+          git config user.name "jaytown-agent"
+          git config user.email "agent@users.noreply.github.com"
+          git add reports/
+          git diff --cached --quiet || git commit -m "Memecoin research brief $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
+          git push

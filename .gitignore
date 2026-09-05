@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .env
 reports/congo_brief_*.md
+reports/memecoin_research_*.md
