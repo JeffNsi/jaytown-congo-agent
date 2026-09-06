@@ -1,6 +1,6 @@
 # Memecoin Research Brief
 
-_Generated (UTC): 2026-09-06_1037_
+_Generated (UTC): 2026-09-06_1111_
 
 ## Executive Summary
 
@@ -17,15 +17,15 @@ _Pipeline mode: fixed heuristic thresholds, no LLM judgment. Candidate discovery
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: $21,868
-- 24h volume: $26,377
-- Pair age: 1.1 hours
+- Liquidity: $27,518
+- 24h volume: $69,901
+- Pair age: 1.6 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: 1 link(s)
 
 **Signals**
-- Volume/liquidity ratio 1.21x -- within a normal range.
-- Buy/sell ratio (24h): 2.1x (buy-skewed)
+- Volume/liquidity ratio 2.54x -- within a normal range.
+- Buy/sell ratio (24h): 1.96x (buy-skewed)
 - Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
 
 **Data gaps**
@@ -34,7 +34,7 @@ _Discovery source: boosted -- PAID PROMOTION_
 - LP lock status: unavailable (not exposed by DexScreener's free API).
 - Unique-author count / bot-vs-human split on social chatter: unavailable (DuckDuckGo results give article mentions, not per-account engagement).
 
-**Narrative proxy**: 0 recent web/news mention(s) found for the query `"Solana Stock Index" INDEX solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
+**Narrative proxy**: 8 recent web/news mention(s) found for the query `"Solana Stock Index" INDEX solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
 
 **Framework answers (heuristic-only, see note)**
 - 1. Real-community evidence: 1 declared official social link(s) exist on-chain metadata.
@@ -65,14 +65,14 @@ _Discovery source: boosted -- PAID PROMOTION_
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: $36,192
-- 24h volume: $336,046
-- Pair age: 1.9 hours
+- Liquidity: $46,459
+- 24h volume: $464,505
+- Pair age: 2.4 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: 2 link(s)
 
 **Signals**
-- Volume/liquidity ratio 9.29x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
+- Volume/liquidity ratio 10.0x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
 - Buy/sell ratio (24h): 1.13x (balanced)
 - Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
 
@@ -115,7 +115,7 @@ _Discovery source: boosted -- PAID PROMOTION_
 **Facts**
 - Liquidity: $2,299
 - 24h volume: $335,836
-- Pair age: 2.0 hours
+- Pair age: 2.6 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: 1 link(s)
 
@@ -162,15 +162,15 @@ _Discovery source: boosted -- PAID PROMOTION_
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: $5,803
-- 24h volume: $18,737
-- Pair age: 2.0 hours
+- Liquidity: $7,878
+- 24h volume: $20,099
+- Pair age: 2.5 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: none listed
 
 **Signals**
-- Volume/liquidity ratio 3.23x -- within a normal range.
-- Buy/sell ratio (24h): 0.68x (sell-skewed)
+- Volume/liquidity ratio 2.55x -- within a normal range.
+- Buy/sell ratio (24h): 0.76x (sell-skewed)
 - Liquidity under $10k -- high slippage/rug risk regardless of other metrics.
 - Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
 
@@ -211,15 +211,15 @@ _Discovery source: boosted -- PAID PROMOTION_
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: $4,164
-- 24h volume: $135,024
-- Pair age: 2.1 hours
+- Liquidity: $6,048
+- 24h volume: $137,292
+- Pair age: 2.7 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: 1 link(s)
 
 **Signals**
-- Volume/liquidity ratio 32.43x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
-- Buy/sell ratio (24h): 1.23x (balanced)
+- Volume/liquidity ratio 22.7x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
+- Buy/sell ratio (24h): 1.24x (balanced)
 - Liquidity under $10k -- high slippage/rug risk regardless of other metrics.
 - Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
 
@@ -253,4 +253,4 @@ _Discovery source: boosted -- PAID PROMOTION_
 - 19. Are we seeing genuine adoption or temporary speculation? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
 - 20. If this token fails, what will most likely be the reason? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
 
-**Verdict**: red-flags -- liquidity is too thin to consider tradeable at any real size.
+**Verdict**: red-flags -- volume/liquidity ratio of 22.7x is extreme and consistent with wash trading.
