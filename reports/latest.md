@@ -1,6 +1,6 @@
 # JayTown Congo Intelligence Brief
 
-_Generated (UTC): 2026-09-08_2319_
+_Generated (UTC): 2026-09-09_0408_
 
 ## Market Snapshot
 
@@ -8,11 +8,11 @@ _Generated (UTC): 2026-09-08_2319_
 |---|---|---|
 | IVN.TO | 13.29 CAD | 12.82 |
 | FM.TO | 45.92 CAD | 3.01 |
-| GLNCY | 16.88 USD | 4.07 |
+| GLNCY | 16.88 USD | 3.88 |
 | COPX | 94.38 USD | 3.94 |
 | XME | 119.95 USD | 1.77 |
-| HG=F | 6.776 USD | 1.4 |
-| CDF=X | 2265.71 CDF | 0.17 |
+| HG=F | 6.745 USD | 0.94 |
+| CDF=X | 2265.71 CDF | 0.0 |
 
 ## News & Sentiment
 
