@@ -1,6 +1,6 @@
 # JayTown Congo Intelligence Brief
 
-_Generated (UTC): 2026-09-19_1753_
+_Generated (UTC): 2026-09-19_2022_
 
 ## Market Snapshot
 
