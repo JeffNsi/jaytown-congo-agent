@@ -1,31 +1,31 @@
 # Memecoin Research Brief
 
-_Generated (UTC): 2026-10-26_0127_
+_Generated (UTC): 2026-10-26_0644_
 
 ## Executive Summary
 
-- ANON: needs-more-data
-- LUNC: asymmetric-opportunity-candidate
-- GTA: needs-more-data
-- NVDA: needs-more-data
-- MINEHUB: needs-more-data
+- REMUS: needs-more-data
+- CBUCKS: asymmetric-opportunity-candidate
+- cooper: needs-more-data
+- CATTLEAXE: red-flags
+- GIGATITS: red-flags
 
 _Pipeline mode: fixed heuristic thresholds, no LLM judgment. Candidate discovery (if used) came from DexScreener's PAID boosted/profile feeds -- presence there is a marketing-spend signal, not a quality signal._
 
-### ANON (solana, `DW1b4NmhQudLJDAJwWC3qAPv3kZa3q87LxMvUVg4pump`)
+### REMUS (solana, `CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump`)
 
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: unavailable
-- 24h volume: $78,955
-- Pair age: 1.2 hours
+- Liquidity: $104,818
+- 24h volume: $1,297,431
+- Pair age: 55.6 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: 1 link(s)
 
 **Signals**
-- Buy/sell ratio (24h): 1.19x (balanced)
-- Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
+- Volume/liquidity ratio 12.38x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
+- Buy/sell ratio (24h): 1.34x (buy-skewed)
 
 **Data gaps**
 - Holder distribution unavailable: BIRDEYE_API_KEY not set. Holder distribution, whale concentration, and deployer-wallet checks require a paid on-chain indexer (Birdeye/Helius/Solscan Pro/Nansen). Do not assume distribution is healthy in its absence.
@@ -33,7 +33,7 @@ _Discovery source: boosted -- PAID PROMOTION_
 - LP lock status: unavailable (not exposed by DexScreener's free API).
 - Unique-author count / bot-vs-human split on social chatter: unavailable (DuckDuckGo results give article mentions, not per-account engagement).
 
-**Narrative proxy**: 0 recent web/news mention(s) found for the query `"anon" ANON solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
+**Narrative proxy**: 1 recent web/news mention(s) found for the query `"Remus" REMUS solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
 
 **Framework answers (heuristic-only, see note)**
 - 1. Real-community evidence: 1 declared official social link(s) exist on-chain metadata.
@@ -59,20 +59,20 @@ _Discovery source: boosted -- PAID PROMOTION_
 
 **Verdict**: needs-more-data -- insufficient free-tier data to confirm organic strength either way.
 
-### LUNC (solana, `3zKhzZhbfU2wgpaTwNTL6tietudCQFZFC9c3MuNRpump`)
+### CBUCKS (solana, `DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump`)
 
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: $31,023
-- 24h volume: $809
-- Pair age: 4224.0 hours
+- Liquidity: $111,676
+- 24h volume: $142,131
+- Pair age: 468.2 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: 1 link(s)
 
 **Signals**
-- Volume/liquidity ratio 0.03x -- within a normal range.
-- Buy/sell ratio (24h): 2.29x (buy-skewed)
+- Volume/liquidity ratio 1.27x -- within a normal range.
+- Buy/sell ratio (24h): 1.2x (balanced)
 
 **Data gaps**
 - Holder distribution unavailable: BIRDEYE_API_KEY not set. Holder distribution, whale concentration, and deployer-wallet checks require a paid on-chain indexer (Birdeye/Helius/Solscan Pro/Nansen). Do not assume distribution is healthy in its absence.
@@ -80,7 +80,7 @@ _Discovery source: boosted -- PAID PROMOTION_
 - LP lock status: unavailable (not exposed by DexScreener's free API).
 - Unique-author count / bot-vs-human split on social chatter: unavailable (DuckDuckGo results give article mentions, not per-account engagement).
 
-**Narrative proxy**: 0 recent web/news mention(s) found for the query `"LUNA CLASSIC" LUNC solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
+**Narrative proxy**: 0 recent web/news mention(s) found for the query `"Cartoon Money" CBUCKS solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
 
 **Framework answers (heuristic-only, see note)**
 - 1. Real-community evidence: 1 declared official social link(s) exist on-chain metadata.
@@ -106,20 +106,21 @@ _Discovery source: boosted -- PAID PROMOTION_
 
 **Verdict**: asymmetric-opportunity-candidate -- adequate liquidity, sustained pair age, and no extreme volume/liquidity distortion -- warrants deeper (LLM-mode or manual) review.
 
-### GTA (solana, `7JEfFdwmXfQf89ty1sF3aspN9oku9fHikA7XZTTXpump`)
+### cooper (solana, `44MTU4G9UPFLnsStuUMmcbQckkha7a2zakFd9Sddpump`)
 
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: $66,263
-- 24h volume: $618,140
-- Pair age: 2.5 hours
+- Liquidity: $7,586
+- 24h volume: $76,374
+- Pair age: 1.3 hours
 - FDV/MarketCap ratio: 1.0
-- Declared socials: 1 link(s)
+- Declared socials: 2 link(s)
 
 **Signals**
-- Volume/liquidity ratio 9.33x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
-- Buy/sell ratio (24h): 2.23x (buy-skewed)
+- Volume/liquidity ratio 10.07x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
+- Buy/sell ratio (24h): 1.3x (balanced)
+- Liquidity under $10k -- high slippage/rug risk regardless of other metrics.
 - Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
 
 **Data gaps**
@@ -128,7 +129,54 @@ _Discovery source: boosted -- PAID PROMOTION_
 - LP lock status: unavailable (not exposed by DexScreener's free API).
 - Unique-author count / bot-vs-human split on social chatter: unavailable (DuckDuckGo results give article mentions, not per-account engagement).
 
-**Narrative proxy**: 0 recent web/news mention(s) found for the query `"Grand Trump Agency" GTA solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
+**Narrative proxy**: 4 recent web/news mention(s) found for the query `"cooper" cooper solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
+
+**Framework answers (heuristic-only, see note)**
+- 1. Real-community evidence: 2 declared official social link(s) exist on-chain metadata.
+- 2. Artificial-community evidence: token was discovered via a PAID promotion feed, which is a spend signal, not organic pull.
+- 3. Is engagement proportional to the size of the community? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 4. Is community growth accelerating? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 5. Where is the growth coming from? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 6. Are the same wallets/users repeatedly appearing? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 7. Is trading activity organic? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 8. Is liquidity sufficient? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 9. Are whales accumulating or distributing? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 10. Is supply concentrated? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 11. Are wallets connected to the deployer or insiders? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 12. What is the strongest bullish argument? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 13. What is the strongest bearish argument? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 14. What information would invalidate the bullish thesis? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 15. What important information is currently missing? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 16. What upcoming catalysts could increase attention? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 17. What could cause the community to disappear? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 18. Is the current momentum sustainable? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 19. Are we seeing genuine adoption or temporary speculation? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+- 20. If this token fails, what will most likely be the reason? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
+
+**Verdict**: needs-more-data -- insufficient free-tier data to confirm organic strength either way.
+
+### CATTLEAXE (solana, `H7VZNCBynDK5ikBS9krDJ2Tx8CUr1wxedV19ZgkWpump`)
+
+_Discovery source: boosted -- PAID PROMOTION_
+
+**Facts**
+- Liquidity: $121,417
+- 24h volume: $3,193,945
+- Pair age: 35.1 hours
+- FDV/MarketCap ratio: 1.0
+- Declared socials: 1 link(s)
+
+**Signals**
+- Volume/liquidity ratio 26.31x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
+- Buy/sell ratio (24h): 1.75x (buy-skewed)
+
+**Data gaps**
+- Holder distribution unavailable: BIRDEYE_API_KEY not set. Holder distribution, whale concentration, and deployer-wallet checks require a paid on-chain indexer (Birdeye/Helius/Solscan Pro/Nansen). Do not assume distribution is healthy in its absence.
+- Deployer/insider wallet linkage: unavailable (no on-chain indexer configured).
+- LP lock status: unavailable (not exposed by DexScreener's free API).
+- Unique-author count / bot-vs-human split on social chatter: unavailable (DuckDuckGo results give article mentions, not per-account engagement).
+
+**Narrative proxy**: 0 recent web/news mention(s) found for the query `"Cattleaxe" CATTLEAXE solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
 
 **Framework answers (heuristic-only, see note)**
 - 1. Real-community evidence: 1 declared official social link(s) exist on-chain metadata.
@@ -152,69 +200,22 @@ _Discovery source: boosted -- PAID PROMOTION_
 - 19. Are we seeing genuine adoption or temporary speculation? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
 - 20. If this token fails, what will most likely be the reason? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
 
-**Verdict**: needs-more-data -- insufficient free-tier data to confirm organic strength either way.
+**Verdict**: red-flags -- volume/liquidity ratio of 26.31x is extreme and consistent with wash trading.
 
-### NVDA (solana, `4WgxC56hGyNXLd14mCgxBuR2DUyDReF8koFDynhepump`)
-
-_Discovery source: boosted -- PAID PROMOTION_
-
-**Facts**
-- Liquidity: $23,494
-- 24h volume: $107,150
-- Pair age: 4.1 hours
-- FDV/MarketCap ratio: 1.0
-- Declared socials: none listed
-
-**Signals**
-- Volume/liquidity ratio 4.56x -- within a normal range.
-- Buy/sell ratio (24h): 1.04x (balanced)
-- Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
-
-**Data gaps**
-- Holder distribution unavailable: BIRDEYE_API_KEY not set. Holder distribution, whale concentration, and deployer-wallet checks require a paid on-chain indexer (Birdeye/Helius/Solscan Pro/Nansen). Do not assume distribution is healthy in its absence.
-- Deployer/insider wallet linkage: unavailable (no on-chain indexer configured).
-- LP lock status: unavailable (not exposed by DexScreener's free API).
-- Unique-author count / bot-vs-human split on social chatter: unavailable (DuckDuckGo results give article mentions, not per-account engagement).
-
-**Narrative proxy**: 0 recent web/news mention(s) found for the query `"Nut Vigorously In Dat Insane Ass" NVDA solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
-
-**Framework answers (heuristic-only, see note)**
-- 1. Real-community evidence: no declared social links found -- weak signal.
-- 2. Artificial-community evidence: token was discovered via a PAID promotion feed, which is a spend signal, not organic pull.
-- 3. Is engagement proportional to the size of the community? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 4. Is community growth accelerating? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 5. Where is the growth coming from? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 6. Are the same wallets/users repeatedly appearing? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 7. Is trading activity organic? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 8. Is liquidity sufficient? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 9. Are whales accumulating or distributing? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 10. Is supply concentrated? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 11. Are wallets connected to the deployer or insiders? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 12. What is the strongest bullish argument? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 13. What is the strongest bearish argument? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 14. What information would invalidate the bullish thesis? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 15. What important information is currently missing? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 16. What upcoming catalysts could increase attention? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 17. What could cause the community to disappear? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 18. Is the current momentum sustainable? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 19. Are we seeing genuine adoption or temporary speculation? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-- 20. If this token fails, what will most likely be the reason? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
-
-**Verdict**: needs-more-data -- insufficient free-tier data to confirm organic strength either way.
-
-### MINEHUB (solana, `8a7YgPNM9Lf8tCntGBfHonbqCAZH7w9AupF1vwTimine`)
+### GIGATITS (solana, `ABp2bT8ovFYYY8etNQmJauRDXgk3tYkt2jpmGqZSpump`)
 
 _Discovery source: boosted -- PAID PROMOTION_
 
 **Facts**
-- Liquidity: unavailable
-- 24h volume: $126,286
-- Pair age: 7.2 hours
+- Liquidity: $37,964
+- 24h volume: $1,559,775
+- Pair age: 4.5 hours
 - FDV/MarketCap ratio: 1.0
 - Declared socials: 1 link(s)
 
 **Signals**
-- Buy/sell ratio (24h): 1.35x (buy-skewed)
+- Volume/liquidity ratio 41.09x in 24h -- unusually high relative to pool depth; can indicate wash trading or bot activity as easily as genuine demand. Not automatically bullish.
+- Buy/sell ratio (24h): 1.74x (buy-skewed)
 - Pair is under 24h old -- too early for any growth-acceleration claim; treat as unknown-stage.
 
 **Data gaps**
@@ -223,7 +224,7 @@ _Discovery source: boosted -- PAID PROMOTION_
 - LP lock status: unavailable (not exposed by DexScreener's free API).
 - Unique-author count / bot-vs-human split on social chatter: unavailable (DuckDuckGo results give article mentions, not per-account engagement).
 
-**Narrative proxy**: 8 recent web/news mention(s) found for the query `"minehub" MINEHUB solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
+**Narrative proxy**: 0 recent web/news mention(s) found for the query `"Giga Tits" GIGATITS solana memecoin`. This measures indexed mentions, not community size, growth rate, or authenticity -- AND the ticker alone is not a unique identifier (many memecoins reuse common tickers), so even with the token name and chain added to the query, individual results are not verified to be about this specific contract address. Treat this count as an unverified, easily-mismatched proxy, not confirmed attribution.
 
 **Framework answers (heuristic-only, see note)**
 - 1. Real-community evidence: 1 declared official social link(s) exist on-chain metadata.
@@ -247,4 +248,4 @@ _Discovery source: boosted -- PAID PROMOTION_
 - 19. Are we seeing genuine adoption or temporary speculation? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
 - 20. If this token fails, what will most likely be the reason? -> data unavailable in pipeline mode (requires holder/whale on-chain data and/or LLM contextual judgment).
 
-**Verdict**: needs-more-data -- insufficient free-tier data to confirm organic strength either way.
+**Verdict**: red-flags -- volume/liquidity ratio of 41.09x is extreme and consistent with wash trading.
