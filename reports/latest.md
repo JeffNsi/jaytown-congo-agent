@@ -1,6 +1,6 @@
 # JayTown Congo Intelligence Brief
 
-_Generated (UTC): 2026-11-01_1259_
+_Generated (UTC): 2026-11-01_1823_
 
 ## Market Snapshot
 
@@ -12,7 +12,7 @@ _Generated (UTC): 2026-11-01_1259_
 | COPX | 71.96 USD | -3.66 |
 | XME | 97.82 USD | -3.2 |
 | HG=F | 6.482 USD | -0.97 |
-| CDF=X | 2300.0 CDF | 1.7 |
+| CDF=X | 2261.5601 CDF | 0.0 |
 
 ## News & Sentiment
 
